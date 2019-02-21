@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="c140d5d7-6be7-41da-a3b4-785f479b825d" Version="1.0" Language="en-US" Publisher="Congiu Luca" />
+        <Identity Id="c140d5d7-6be7-41da-a3b4-785f479b825e" Version="1.0.0" Language="en-US" Publisher="Congiu Luca" />
         <DisplayName>PWA Support</DisplayName>
         <Description xml:space="preserve">This project helps you to add Progressive Web App support to your web app</Description>
         <ReleaseNotes>CHANGELOG.html</ReleaseNotes>
