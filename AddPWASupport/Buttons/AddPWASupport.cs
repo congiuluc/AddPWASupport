@@ -39,20 +39,9 @@ namespace AddPWASupport
         /// <param name="commandService">Command service to add command to, not null.</param>
         private AddPWASupport(AsyncPackage package, OleMenuCommandService commandService)
         {
+            this.package = package ?? throw new ArgumentNullException(nameof(package));
+            commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
 
-            if (package == null)
-            {
-                throw new ArgumentNullException(nameof(package)); 
-            }
-            if (commandService == null)
-            {
-                throw new ArgumentNullException(nameof(commandService));
-            }
-
-            this.package = package;
-
-         
-          
             var menuCommandID = new CommandID(CommandSet, CommandId);
             var menuItem = new OleMenuCommand(this.Execute, menuCommandID);
             menuItem.BeforeQueryStatus += BeforeQueryStatus;
@@ -161,8 +150,8 @@ namespace AddPWASupport
             string layoutMvcPages = Path.Combine(root, "Views\\Shared\\_layout.cshtml");
             string layout = Path.Combine(root, "index.html");
             string script = System.IO.File.ReadAllText(VsHelpers.GetFileInVsix($"Resources\\script.js"));
-            string html = "";
-            string masterPage = "";
+            string html="";
+            string masterPage="";
             if (System.IO.File.Exists(layoutRazorPages))
             {
                 masterPage = layoutRazorPages;
@@ -176,8 +165,7 @@ namespace AddPWASupport
                 masterPage = layout;
             }
 
-            if (!string.IsNullOrWhiteSpace(masterPage))
-            {
+            if (!string.IsNullOrWhiteSpace(masterPage)) {
 
                 html = System.IO.File.ReadAllText(masterPage);
                 if (html.IndexOf("navigator.serviceWorker.register('sw.js',") == -1)
@@ -198,8 +186,7 @@ namespace AddPWASupport
 
 
             //service worker
-            if (!File.Exists(Path.Combine(webroot, "sw.js")))
-            {
+            if (!File.Exists(Path.Combine(webroot, "sw.js"))) {
                 string source = VsHelpers.GetFileInVsix($"Resources\\sw.js");
                 System.IO.File.Copy(source, Path.Combine(webroot, "sw.js"));
             }
