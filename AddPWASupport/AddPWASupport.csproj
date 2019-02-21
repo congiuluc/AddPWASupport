@@ -54,13 +54,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AddPWASupport.cs" />
+    <Compile Include="Buttons\AddPWASupport.cs" />
     <Compile Include="AddPWASupportPackage.cs" />
+    <Compile Include="Models\PWAManifest.cs" />
+    <Compile Include="Shared\VsHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Key.snk" />
     <None Include="packages.config" />
+    <None Include="Resources\Icons\icons.json" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
@@ -68,12 +72,128 @@
   <ItemGroup>
     <VSCTCompile Include="AddPWASupportPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
+      <SubType>Designer</SubType>
     </VSCTCompile>
     <Content Include="index.html" />
+    <Content Include="Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Resources\AddPWASupport.png" />
     <Content Include="Resources\AddPWASupportPackage.ico" />
+    <Content Include="Resources\Icons\android\android-launchericon-144-144.png" />
+    <Content Include="Resources\Icons\android\android-launchericon-192-192.png" />
+    <Content Include="Resources\Icons\android\android-launchericon-48-48.png" />
+    <Content Include="Resources\Icons\android\android-launchericon-512-512.png" />
+    <Content Include="Resources\Icons\android\android-launchericon-72-72.png" />
+    <Content Include="Resources\Icons\android\android-launchericon-96-96.png" />
+    <Content Include="Resources\Icons\chrome\chrome-extensionmanagementpage-48-48.png" />
+    <Content Include="Resources\Icons\chrome\chrome-favicon-16-16.png" />
+    <Content Include="Resources\Icons\chrome\chrome-installprocess-128-128.png" />
+    <Content Include="Resources\Icons\firefox\firefox-general-128-128.png" />
+    <Content Include="Resources\Icons\firefox\firefox-general-16-16.png" />
+    <Content Include="Resources\Icons\firefox\firefox-general-256-256.png" />
+    <Content Include="Resources\Icons\firefox\firefox-general-32-32.png" />
+    <Content Include="Resources\Icons\firefox\firefox-general-48-48.png" />
+    <Content Include="Resources\Icons\firefox\firefox-general-64-64.png" />
+    <Content Include="Resources\Icons\firefox\firefox-general-90-90.png" />
+    <Content Include="Resources\Icons\firefox\firefox-marketplace-128-128.png" />
+    <Content Include="Resources\Icons\firefox\firefox-marketplace-512-512.png" />
+    <Content Include="Resources\Icons\ios\ios-appicon-1024-1024.png" />
+    <Content Include="Resources\Icons\ios\ios-appicon-120-120.png" />
+    <Content Include="Resources\Icons\ios\ios-appicon-152-152.png" />
+    <Content Include="Resources\Icons\ios\ios-appicon-180-180.png" />
+    <Content Include="Resources\Icons\ios\ios-appicon-76-76.png" />
+    <Content Include="Resources\Icons\ios\ios-launchimage-1024-768.png" />
+    <Content Include="Resources\Icons\ios\ios-launchimage-1242-2208.png" />
+    <Content Include="Resources\Icons\ios\ios-launchimage-1334-750.png" />
+    <Content Include="Resources\Icons\ios\ios-launchimage-1536-2048.png" />
+    <Content Include="Resources\Icons\ios\ios-launchimage-2048-1536.png" />
+    <Content Include="Resources\Icons\ios\ios-launchimage-2208-1242.png" />
+    <Content Include="Resources\Icons\ios\ios-launchimage-640-1136.png" />
+    <Content Include="Resources\Icons\ios\ios-launchimage-640-960.png" />
+    <Content Include="Resources\Icons\ios\ios-launchimage-750-1334.png" />
+    <Content Include="Resources\Icons\ios\ios-launchimage-768-1024.png" />
+    <Content Include="Resources\Icons\windows10\SplashScreen.scale-100.png" />
+    <Content Include="Resources\Icons\windows10\SplashScreen.scale-125.png" />
+    <Content Include="Resources\Icons\windows10\SplashScreen.scale-150.png" />
+    <Content Include="Resources\Icons\windows10\SplashScreen.scale-200.png" />
+    <Content Include="Resources\Icons\windows10\SplashScreen.scale-400.png" />
+    <Content Include="Resources\Icons\windows10\Square150x150Logo.scale-100.png" />
+    <Content Include="Resources\Icons\windows10\Square150x150Logo.scale-125.png" />
+    <Content Include="Resources\Icons\windows10\Square150x150Logo.scale-150.png" />
+    <Content Include="Resources\Icons\windows10\Square150x150Logo.scale-200.png" />
+    <Content Include="Resources\Icons\windows10\Square150x150Logo.scale-400.png" />
+    <Content Include="Resources\Icons\windows10\Square310x310Logo.scale-100.png" />
+    <Content Include="Resources\Icons\windows10\Square310x310Logo.scale-125.png" />
+    <Content Include="Resources\Icons\windows10\Square310x310Logo.scale-150.png" />
+    <Content Include="Resources\Icons\windows10\Square310x310Logo.scale-200.png" />
+    <Content Include="Resources\Icons\windows10\Square310x310Logo.scale-400.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.scale-100.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.scale-125.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.scale-150.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.scale-200.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.scale-400.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.targetsize-16_altform-unplated.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.targetsize-256_altform-unplated.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Resources\Icons\windows10\Square44x44Logo.targetsize-48_altform-unplated.png" />
+    <Content Include="Resources\Icons\windows10\Square71x71Logo.scale-100.png" />
+    <Content Include="Resources\Icons\windows10\Square71x71Logo.scale-125.png" />
+    <Content Include="Resources\Icons\windows10\Square71x71Logo.scale-150.png" />
+    <Content Include="Resources\Icons\windows10\Square71x71Logo.scale-200.png" />
+    <Content Include="Resources\Icons\windows10\Square71x71Logo.scale-400.png" />
+    <Content Include="Resources\Icons\windows10\StoreLogo.png" />
+    <Content Include="Resources\Icons\windows10\StoreLogo.scale-100.png" />
+    <Content Include="Resources\Icons\windows10\StoreLogo.scale-125.png" />
+    <Content Include="Resources\Icons\windows10\StoreLogo.scale-150.png" />
+    <Content Include="Resources\Icons\windows10\StoreLogo.scale-200.png" />
+    <Content Include="Resources\Icons\windows10\StoreLogo.scale-400.png" />
+    <Content Include="Resources\Icons\windows10\Wide310x150Logo.scale-100.png" />
+    <Content Include="Resources\Icons\windows10\Wide310x150Logo.scale-125.png" />
+    <Content Include="Resources\Icons\windows10\Wide310x150Logo.scale-150.png" />
+    <Content Include="Resources\Icons\windows10\Wide310x150Logo.scale-200.png" />
+    <Content Include="Resources\Icons\windows10\Wide310x150Logo.scale-400.png" />
+    <Content Include="Resources\Icons\windows\windows-smallsquare-24-24.png" />
+    <Content Include="Resources\Icons\windows\windows-smallsquare-30-30.png" />
+    <Content Include="Resources\Icons\windows\windows-smallsquare-42-42.png" />
+    <Content Include="Resources\Icons\windows\windows-smallsquare-54-54.png" />
+    <Content Include="Resources\Icons\windows\windows-splashscreen-1116-540.png" />
+    <Content Include="Resources\Icons\windows\windows-splashscreen-620-300.png" />
+    <Content Include="Resources\Icons\windows\windows-splashscreen-868-420.png" />
+    <Content Include="Resources\Icons\windows\windows-squarelogo-120-120.png" />
+    <Content Include="Resources\Icons\windows\windows-squarelogo-150-150.png" />
+    <Content Include="Resources\Icons\windows\windows-squarelogo-210-210.png" />
+    <Content Include="Resources\Icons\windows\windows-squarelogo-270-270.png" />
+    <Content Include="Resources\Icons\windows\windows-storelogo-50-50.png" />
+    <Content Include="Resources\Icons\windows\windows-storelogo-70-70.png" />
+    <Content Include="Resources\Icons\windows\windows-storelogo-90-90.png" />
+    <Content Include="Resources\Icons\windows\windowsphone-appicon-106-106.png" />
+    <Content Include="Resources\Icons\windows\windowsphone-appicon-44-44.png" />
+    <Content Include="Resources\Icons\windows\windowsphone-appicon-62-62.png" />
+    <Content Include="Resources\Icons\windows\windowsphone-mediumtile-150-150.png" />
+    <Content Include="Resources\Icons\windows\windowsphone-mediumtile-210-210.png" />
+    <Content Include="Resources\Icons\windows\windowsphone-mediumtile-360-360.png" />
+    <Content Include="Resources\Icons\windows\windowsphone-smalltile-170-170.png" />
+    <Content Include="Resources\Icons\windows\windowsphone-smalltile-71-71.png" />
+    <Content Include="Resources\Icons\windows\windowsphone-smalltile-99-99.png" />
+    <Content Include="Resources\Icons\windows\windowsphone-storelogo-120-120.png" />
+    <Content Include="Resources\Icons\windows\windowsphone-storelogo-50-50.png" />
+    <Content Include="Resources\Icons\windows\windowsphone-storelogo-70-70.png" />
     <Content Include="Resources\pwa.png" />
     <Content Include="Resources\pwa.svg" />
+    <Content Include="Resources\script.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\sw.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="stylesheet.css" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +276,9 @@
     <Reference Include="Microsoft.VisualStudio.Validation, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.VisualStudio.Validation.15.0.82\lib\net45\Microsoft.VisualStudio.Validation.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
@@ -165,6 +288,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="VSPackage.resx">
