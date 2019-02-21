@@ -150,34 +150,24 @@ namespace AddPWASupport
             string layoutMvcPages = Path.Combine(root, "Views\\Shared\\_layout.cshtml");
             string layout = Path.Combine(root, "index.html");
             string script = System.IO.File.ReadAllText(VsHelpers.GetFileInVsix($"Resources\\script.js"));
-            string html;
+            string html="";
+            string masterPage="";
             if (System.IO.File.Exists(layoutRazorPages))
             {
-                html = System.IO.File.ReadAllText(layoutRazorPages);
-
-                if (html.IndexOf("navigator.serviceWorker.register('sw.js',") == -1)
-                {
-                    html = html.Replace("</head>", string.Format("<script>{0}</script></head>",script));
-                }
-
-                if (html.IndexOf("<link rel=\"manifest\" href=\"/manifest.json\">") == -1)
-                {
-                    html = html.Replace("</head>", "<link rel=\"manifest\" href=\"/manifest.json\"></head>");
-                   
-                }
-
-                if (html.IndexOf("<meta name=\"theme-color\" content=\"#317EFB\">") == -1)
-                {
-                    html = html.Replace("</head>", "<meta name=\"theme-color\" content=\"#317EFB\"></head>");
-                }
-                System.IO.File.WriteAllText(layoutRazorPages, html);
-
-
-
+                masterPage = layoutRazorPages;
             }
             else if (System.IO.File.Exists(layoutMvcPages))
             {
-                html = System.IO.File.ReadAllText(layoutMvcPages);
+                masterPage = layoutMvcPages;
+            }
+            else if (System.IO.File.Exists(layout))
+            {
+                masterPage = layout;
+            }
+
+            if (!string.IsNullOrWhiteSpace(masterPage)) {
+
+                html = System.IO.File.ReadAllText(masterPage);
                 if (html.IndexOf("navigator.serviceWorker.register('sw.js',") == -1)
                 {
                     html = html.Replace("</head>", string.Format("<script>{0}</script></head>", script));
@@ -191,31 +181,15 @@ namespace AddPWASupport
                 {
                     html = html.Replace("</head>", "<meta name=\"theme-color\" content=\"#317EFB\"></head>");
                 }
-                System.IO.File.WriteAllText(layoutMvcPages, html);
-
+                System.IO.File.WriteAllText(masterPage, html);
             }
-            else if (System.IO.File.Exists(layout))
-            {
-                html = System.IO.File.ReadAllText(layout);
-                if (html.IndexOf("navigator.serviceWorker.register('sw.js',") == -1)
-                {
-                    html = html.Replace("</head>", string.Format("<script>{0}</script></head>", script));
-                }
 
-                if (html.IndexOf("<link rel=\"manifest\" href=\"/manifest.json\">") == -1)
-                {
-                    html.Replace("</head>", "<link rel=\"manifest\" href=\"/manifest.json\"></head>");
-                }
-                if (html.IndexOf("<meta name=\"theme-color\" content=\"#317EFB\">") == -1)
-                {
-                    html = html.Replace("</head>", "<meta name=\"theme-color\" content=\"#317EFB\"></head>");
-                }
-                System.IO.File.WriteAllText(layout, html);
-            }
 
             //service worker
-            string source = VsHelpers.GetFileInVsix($"Resources\\sw.js");
-            System.IO.File.Copy(source, Path.Combine(webroot, "sw.js"));
+            if (!File.Exists(Path.Combine(webroot, "sw.js"))) {
+                string source = VsHelpers.GetFileInVsix($"Resources\\sw.js");
+                System.IO.File.Copy(source, Path.Combine(webroot, "sw.js"));
+            }
 
             VsHelpers.OpenFileAndRefresh(templateFile);
 

@@ -70,19 +70,44 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\pwa.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\WebPart.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\WebPartX175.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\WebPartX90.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <VSCTCompile Include="AddPWASupportPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
       <SubType>Designer</SubType>
     </VSCTCompile>
-    <Content Include="index.html" />
+    <Content Include="CHANGELOG.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Newtonsoft.Json.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Resources\AddPWASupport.png" />
-    <Content Include="Resources\AddPWASupportPackage.ico" />
+    <Content Include="Resources\AddPWASupport.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\AddPWASupportPackage.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Resources\Icons\android\android-launchericon-144-144.png" />
-    <Content Include="Resources\Icons\android\android-launchericon-192-192.png" />
+    <Content Include="Resources\Icons\android\android-launchericon-192-192.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Resources\Icons\android\android-launchericon-48-48.png" />
     <Content Include="Resources\Icons\android\android-launchericon-512-512.png" />
     <Content Include="Resources\Icons\android\android-launchericon-72-72.png" />
@@ -119,7 +144,10 @@
     <Content Include="Resources\Icons\windows10\SplashScreen.scale-150.png" />
     <Content Include="Resources\Icons\windows10\SplashScreen.scale-200.png" />
     <Content Include="Resources\Icons\windows10\SplashScreen.scale-400.png" />
-    <Content Include="Resources\Icons\windows10\Square150x150Logo.scale-100.png" />
+    <Content Include="Resources\Icons\windows10\Square150x150Logo.scale-100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Resources\Icons\windows10\Square150x150Logo.scale-125.png" />
     <Content Include="Resources\Icons\windows10\Square150x150Logo.scale-150.png" />
     <Content Include="Resources\Icons\windows10\Square150x150Logo.scale-200.png" />
@@ -184,8 +212,13 @@
     <Content Include="Resources\Icons\windows\windowsphone-storelogo-120-120.png" />
     <Content Include="Resources\Icons\windows\windowsphone-storelogo-50-50.png" />
     <Content Include="Resources\Icons\windows\windowsphone-storelogo-70-70.png" />
-    <Content Include="Resources\pwa.png" />
-    <Content Include="Resources\pwa.svg" />
+    <Content Include="Resources\pwa.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\pwa.svg">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Resources\script.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -194,7 +227,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="stylesheet.css" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.VisualStudio.SDK.Analyzers.15.8.36\analyzers\cs\Microsoft.VisualStudio.SDK.Analyzers.dll" />

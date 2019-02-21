@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Contributing</title>
+</head>
+<body>
+
+    <h1 id="contributing">Contributing</h1>
+<p>Looking to contribute something? <strong>Here's how you can help.</strong></p>
+<p>Please take a moment to review this document in order to make the contribution
+process easy and effective for everyone involved.</p>
+<p>Following these guidelines helps to communicate that you respect the time of
+the developers managing and developing this open source project. In return,
+they should reciprocate that respect in addressing your issue or assessing
+patches and features.</p>
+<h2 id="using-the-issue-tracker">Using the issue tracker</h2>
+<p>The issue tracker is the preferred channel for <a href="#bug-reports">bug reports</a>,
+<a href="#feature-requests">features requests</a> and
+<a href="#pull-requests">submitting pull requests</a>, but please respect the
+following restrictions:</p>
+<ul>
+<li><p>Please <strong>do not</strong> use the issue tracker for personal support requests.  Stack
+Overflow is a better place to get help.</p>
+</li>
+<li><p>Please <strong>do not</strong> derail or troll issues. Keep the discussion on topic and
+respect the opinions of others.</p>
+</li>
+<li><p>Please <strong>do not</strong> open issues or pull requests which <em>belongs to</em> third party
+components.</p>
+</li>
+</ul>
+<h2 id="bug-reports">Bug reports</h2>
+<p>A bug is a <em>demonstrable problem</em> that is caused by the code in the repository.
+Good bug reports are extremely helpful, so thanks!</p>
+<p>Guidelines for bug reports:</p>
+<ol>
+<li><p><strong>Use the GitHub issue search</strong> — check if the issue has already been
+reported.</p>
+</li>
+<li><p><strong>Check if the issue has been fixed</strong> — try to reproduce it using the
+latest <code>master</code> or development branch in the repository.</p>
+</li>
+<li><p><strong>Isolate the problem</strong> — ideally create an
+<a href="http://www.sscce.org/">SSCCE</a> and a live example.
+Uploading the project on cloud storage (OneDrive, DropBox, et el.)
+or creating a sample GitHub repository is also helpful.</p>
+</li>
+</ol>
+<p>A good bug report shouldn't leave others needing to chase you up for more
+information. Please try to be as detailed as possible in your report. What is
+your environment? What steps will reproduce the issue? What browser(s) and OS
+experience the problem? Do other browsers show the bug differently? What
+would you expect to be the outcome? All these details will help people to fix
+any potential bugs.</p>
+<p>Example:</p>
+<blockquote>
+<p>Short and descriptive example bug report title</p>
+<p>A summary of the issue and the Visual Studio, browser, OS environments
+in which it occurs. If suitable, include the steps required to reproduce the bug.</p>
+<ol>
+<li>This is the first step</li>
+<li>This is the second step</li>
+<li>Further steps, etc.</li>
+</ol>
+<p><code>&lt;url&gt;</code> - a link to the project/file uploaded on cloud storage or other publicly accessible medium.</p>
+<p>Any other information you want to share that is relevant to the issue being
+reported. This might include the lines of code that you have identified as
+causing the bug, and potential solutions (and your opinions on their
+merits).</p>
+</blockquote>
+<h2 id="feature-requests">Feature requests</h2>
+<p>Feature requests are welcome. But take a moment to find out whether your idea
+fits with the scope and aims of the project. It's up to <em>you</em> to make a strong
+case to convince the project's developers of the merits of this feature. Please
+provide as much detail and context as possible.</p>
+<h2 id="pull-requests">Pull requests</h2>
+<p>Good pull requests, patches, improvements and new features are a fantastic
+help. They should remain focused in scope and avoid containing unrelated
+commits.</p>
+<p><strong>Please ask first</strong> before embarking on any significant pull request (e.g.
+implementing features, refactoring code, porting to a different language),
+otherwise you risk spending a lot of time working on something that the
+project's developers might not want to merge into the project.</p>
+<p>Please adhere to the <a href="#code-guidelines">coding guidelines</a> used throughout the
+project (indentation, accurate comments, etc.) and any other requirements
+(such as test coverage).</p>
+<p>Adhering to the following process is the best way to get your work
+included in the project:</p>
+<ol>
+<li><p><a href="http://help.github.com/fork-a-repo/">Fork</a> the project, clone your fork,
+and configure the remotes:</p>
+<pre><code class="language-bash"># Clone your fork of the repo into the current directory
+git clone https://github.com/&lt;your-username&gt;/&lt;this-repro-name&gt;.git
+# Navigate to the newly cloned directory
+cd &lt;folder-name&gt;
+# Assign the original repo to a remote called &quot;upstream&quot;
+git remote add upstream https://github.com/madskristensen/&lt;this-repro-name&gt;.git
+</code></pre>
+</li>
+<li><p>If you cloned a while ago, get the latest changes from upstream:</p>
+<pre><code class="language-bash">git checkout master
+git pull upstream master
+</code></pre>
+</li>
+<li><p>Create a new topic branch (off the main project development branch) to
+contain your feature, change, or fix:</p>
+<pre><code class="language-bash">git checkout -b &lt;topic-branch-name&gt;
+</code></pre>
+</li>
+<li><p>Commit your changes in logical chunks. Please adhere to these <a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">git commit
+message guidelines</a>
+or your code is unlikely be merged into the main project. Use Git's
+<a href="https://help.github.com/articles/interactive-rebase">interactive rebase</a>
+feature to tidy up your commits before making them public. Also, prepend name of the feature
+to the commit message. For instance: &quot;SCSS: Fixes compiler results for IFileListener.\nFixes <code>#123</code>&quot;</p>
+</li>
+<li><p>Locally merge (or rebase) the upstream development branch into your topic branch:</p>
+<pre><code class="language-bash">git pull [--rebase] upstream master
+</code></pre>
+</li>
+<li><p>Push your topic branch up to your fork:</p>
+<pre><code class="language-bash">git push origin &lt;topic-branch-name&gt;
+</code></pre>
+</li>
+<li><p><a href="https://help.github.com/articles/using-pull-requests/">Open a Pull Request</a>
+with a clear title and description against the <code>master</code> branch.</p>
+</li>
+</ol>
+<h2 id="code-guidelines">Code guidelines</h2>
+<ul>
+<li>Always use proper indentation.</li>
+<li>In Visual Studio under <code>Tools &gt; Options &gt; Text Editor &gt; C# &gt; Advanced</code>, make sure
+<code>Place 'System' directives first when sorting usings</code> option is enabled (checked).</li>
+<li>Before committing, organize usings for each updated C# source file. Either you can
+right-click editor and select <code>Organize Usings &gt; Remove and sort</code> OR use extension
+like <a href="http://visualstudiogallery.msdn.microsoft.com/a7f75c34-82b4-4357-9c66-c18e32b9393e">BatchFormat</a>.</li>
+<li>Before committing, run Code Analysis in <code>Debug</code> configuration and follow the guidelines
+to fix CA issues. Code Analysis commits can be made separately.</li>
+</ul>
+
+
+</body>
+</html>
