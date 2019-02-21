@@ -20,7 +20,13 @@ See the [change log](CHANGELOG.md) for changes and road map.
 ### Add PWA Support Button
 his button is enabled on web projects and clicking on it, it will add a manifest file and a server worker file to your project.
 
+When extension is intalled you can see the Add PWA Support button on the project's context menu:
+![Context Menu](screenshots/NewMenuItem.png)
+If click on the button you will see two PWA files: manifest.json e sw.js
 
+![New Files](screenshots/SolutionAfter.PNG)
+
+Execute your web app and check your web app with lighthouse
 
 
 ## Contribute
