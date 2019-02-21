@@ -4,8 +4,8 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/hv6uyc059rqbc6fj?svg=true)](https://ci.appveyor.com/project/congiuluc/addpwasupport)
 
 <!-- Update the VS Gallery link after you upload the VSIX-->
-Download this extension from the [VS Gallery](https://visualstudiogallery.msdn.microsoft.com/[GuidFromGallery])
-or get the [CI build](http://vsixgallery.com/extension/c140d5d7-6be7-41da-a3b4-785f479b825d/).
+Download this extension from the [VS Gallery](https://marketplace.visualstudio.com/items?itemName=congiuluc.addpwasupport)
+or get the [CI build](http://vsixgallery.com/extension/c140d5d7-6be7-41da-a3b4-785f479b825e/).
 
 ---------------------------------------
 
@@ -21,7 +21,7 @@ See the [change log](CHANGELOG.md) for changes and road map.
 his button is enabled on web projects and clicking on it, it will add a manifest file and a server worker file to your project.
 
 When extension is intalled you can see the Add PWA Support button on the project's context menu:
-![Context Menu](screenshots/NewMenuItem.png)
+![Context Menu](screenshots/NewMenuItem.PNG)
 If click on the button you will see two PWA files: manifest.json e sw.js
 
 ![New Files](screenshots/SolutionAfter.PNG)

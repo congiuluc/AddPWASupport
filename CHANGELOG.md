@@ -6,7 +6,7 @@
 
 Features that have a checkmark are complete and available for
 download in the
-[CI build](http://vsixgallery.com/extension/AddPWASupport.c140d5d7-6be7-41da-a3b4-785f479b825d/).
+[CI build](http://vsixgallery.com/extension/c140d5d7-6be7-41da-a3b4-785f479b825e/).
 
 # Change log
 

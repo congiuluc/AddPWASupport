@@ -123,7 +123,7 @@ namespace AddPWASupport.Shared
         {
             foreach (string guid in kindGuids)
             {
-                if (project.Kind.Equals(guid, StringComparison.OrdinalIgnoreCase))
+                if (project.Kind.Contains(guid))
                     return true;
             }
 
